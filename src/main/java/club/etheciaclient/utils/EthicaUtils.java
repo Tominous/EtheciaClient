@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class EthicaUtils {
 
-    public static final Logger LOGGER = LogManager.getLogger("Ethecia Client");
+    public final Logger LOGGER = LogManager.getLogger("Ethecia Client");
 
     public int getBuild() {
         return 1;

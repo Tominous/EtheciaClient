@@ -10,13 +10,15 @@ import org.apache.logging.log4j.Logger;
 
 public class EtheciaClient {
 
-    public static final boolean EVERYTHING_IS_A_VOWEL = false;
-    public static final EventBus EVENT_BUS = new EventBus();
+    public final boolean EVERYTHING_IS_A_VOWEL = false;
+    public final EventBus EVENT_BUS = new EventBus();
     public static EtheciaClient INSTANCE;
+    private EthicaUtils utils = new EthicaUtils();
+
 
     @Subscribe
     public void init(InitializationEvent e) {
-        EthicaUtils.LOGGER.info("Intializing integrations");
+        utils.LOGGER.info("Starting integrations");
         DiscordRPCManager.initDiscordRPC(455364782761967616L);
     }
 }
