@@ -69,7 +69,7 @@ dependencies {
         exclude module: 'gson'
         exclude module: 'commons-io'
     }
-    compile "com.github.psnrigner:discord-rpc-java:1.0.4"
+    embed 'com.github.jagrosh:DiscordIPC:master-SNAPSHOT'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
