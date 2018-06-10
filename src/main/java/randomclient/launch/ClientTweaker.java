@@ -2,6 +2,8 @@ package randomclient.launch;
 
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.LaunchClassLoader;
+import randomclient.RandomClient;
+import randomclient.event.PreInitializationEvent;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -24,7 +26,9 @@ public class ClientTweaker implements ITweaker {
 
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
-        System.out.println("Hey!");
+        new RandomClient();
+        System.out.println("Initializing RandomClient");
+        RandomClient.EVENT_BUS.post(new PreInitializationEvent());
     }
 
     @Override
