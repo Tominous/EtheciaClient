@@ -10,10 +10,12 @@ public class RandomClient {
     public static final EventBus EVENT_BUS = new EventBus();
     public static final Logger LOGGER = LogManager.getLogger("Random Client");
     public static RandomClient INSTANCE;
+
     public RandomClient() {
         INSTANCE = this;
         EVENT_BUS.register(this);
     }
+
     @Subscribe
     public void init(InitializationEvent e) {
         LOGGER.info("Initialization");
