@@ -1,10 +1,10 @@
-package randomclient.integrations;
+package club.etheciaclient.integrations;
 
+import club.etheciaclient.RandomClient;
 import com.jagrosh.discordipc.IPCClient;
 import com.jagrosh.discordipc.IPCListener;
 import com.jagrosh.discordipc.entities.DiscordBuild;
 import com.jagrosh.discordipc.exceptions.NoDiscordClientException;
-import randomclient.RandomClient;
 
 public class DiscordRPCManager {
 

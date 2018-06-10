@@ -1,4 +1,4 @@
-package randomclient.installer;
+package club.etheciaclient.installer;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;
@@ -30,7 +30,7 @@ public class Installer extends JFrame {
     private void initComponents() {
 
         try {
-            font = Font.createFont(Font.TRUETYPE_FONT, MainInstaller.class.getResourceAsStream("assets/randomclient/font/Roboto-Regular.ttf")).deriveFont(Font.PLAIN);
+            font = Font.createFont(Font.TRUETYPE_FONT, MainInstaller.class.getResourceAsStream("assets/etheciaclient/font/Roboto-Regular.ttf")).deriveFont(Font.PLAIN);
         } catch (FontFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {

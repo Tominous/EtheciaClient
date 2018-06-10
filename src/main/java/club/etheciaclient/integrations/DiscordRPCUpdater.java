@@ -1,13 +1,13 @@
-package randomclient.integrations;
+package club.etheciaclient.integrations;
 
+import club.etheciaclient.event.LeaveServerEvent;
+import club.etheciaclient.event.join.JoinServerEvent;
+import club.etheciaclient.event.join.JoinSingleplayerEvent;
+import club.etheciaclient.utils.StringUtils;
 import com.google.common.eventbus.Subscribe;
 import com.jagrosh.discordipc.IPCClient;
 import com.jagrosh.discordipc.entities.RichPresence;
 import net.minecraft.client.Minecraft;
-import randomclient.event.LeaveServerEvent;
-import randomclient.event.join.JoinServerEvent;
-import randomclient.event.join.JoinSingleplayerEvent;
-import randomclient.utils.StringUtils;
 
 import java.time.OffsetDateTime;
 

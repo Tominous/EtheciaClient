@@ -1,15 +1,15 @@
-package randomclient.mixins;
+package club.etheciaclient.mixins;
 
+import club.etheciaclient.RandomClient;
+import club.etheciaclient.event.InitializationEvent;
+import club.etheciaclient.event.PreInitializationEvent;
+import club.etheciaclient.event.join.JoinSingleplayerEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.WorldSettings;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import randomclient.RandomClient;
-import randomclient.event.InitializationEvent;
-import randomclient.event.PreInitializationEvent;
-import randomclient.event.join.JoinSingleplayerEvent;
 
 @Mixin(Minecraft.class)
 public class MixinMinecraft {

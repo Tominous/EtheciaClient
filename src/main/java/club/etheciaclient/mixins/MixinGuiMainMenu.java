@@ -1,4 +1,4 @@
-package randomclient.mixins;
+package club.etheciaclient.mixins;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;
@@ -12,7 +12,7 @@ public class MixinGuiMainMenu {
      */
     @Overwrite
     public void initGui() {
-        Minecraft.getMinecraft().displayGuiScreen(new randomclient.gui.GuiMainMenu());
+        Minecraft.getMinecraft().displayGuiScreen(new ethecia.gui.GuiMainMenu());
     }
     /**
      * @author

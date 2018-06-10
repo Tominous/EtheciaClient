@@ -1,4 +1,4 @@
-package randomclient.event;
+package club.etheciaclient.event;
 
 public class LeaveServerEvent {
 }

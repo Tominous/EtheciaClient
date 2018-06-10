@@ -1,10 +1,10 @@
-package randomclient.launch;
+package club.etheciaclient.launch;
 
+import club.etheciaclient.RandomClient;
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.LaunchClassLoader;
 import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.Mixins;
-import randomclient.RandomClient;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class ClientTweaker implements ITweaker {
         RandomClient.LOGGER.info("Initializing bootstraps");
         MixinBootstrap.init();
         RandomClient.LOGGER.info("Adding mixin configuration");
-        Mixins.addConfiguration("mixins.randomclient.json");
+        Mixins.addConfiguration("mixins.etheciaclient.json");
     }
 
     @Override

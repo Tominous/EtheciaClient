@@ -1,5 +1,6 @@
-package randomclient.mixins;
+package club.etheciaclient.mixins;
 
+import club.etheciaclient.utils.StringUtils;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
@@ -8,7 +9,6 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import randomclient.utils.StringUtils;
 
 import java.util.Locale;
 import java.util.Random;

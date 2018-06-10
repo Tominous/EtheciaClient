@@ -1,4 +1,4 @@
-package randomclient.installer;
+package club.etheciaclient.installer;
 
 public class MainInstaller {
 

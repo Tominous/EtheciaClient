@@ -1,4 +1,4 @@
-package randomclient.utils;
+package club.etheciaclient.utils;
 
 public class StringUtils {
     private static final String[] VOWELS = new String[] {"A", "E", "I", "O", "U"};

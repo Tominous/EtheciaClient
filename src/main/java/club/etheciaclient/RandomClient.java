@@ -1,11 +1,11 @@
-package randomclient;
+package club.etheciaclient;
 
+import club.etheciaclient.event.InitializationEvent;
+import club.etheciaclient.integrations.DiscordRPCManager;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import randomclient.event.InitializationEvent;
-import randomclient.integrations.DiscordRPCManager;
 
 public class RandomClient {
     public static final EventBus EVENT_BUS = new EventBus();

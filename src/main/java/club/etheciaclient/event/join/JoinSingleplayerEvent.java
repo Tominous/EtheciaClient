@@ -1,4 +1,4 @@
-package randomclient.event.join;
+package club.etheciaclient.event.join;
 
 public class JoinSingleplayerEvent {
     public String worldName;

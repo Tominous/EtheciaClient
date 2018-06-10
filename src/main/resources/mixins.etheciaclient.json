@@ -1,7 +1,7 @@
 {
   "required": true,
   "compatibilityLevel": "JAVA_8",
-  "package": "randomclient.mixins",
+  "package": "club.etheciaclient.mixins",
   "verbose": true,
   "mixins": [
     "MixinMinecraft",

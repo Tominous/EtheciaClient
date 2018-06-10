@@ -1,4 +1,4 @@
-package randomclient.event.join;
+package club.etheciaclient.event.join;
 
 public class JoinServerEvent {
     public String ip;
