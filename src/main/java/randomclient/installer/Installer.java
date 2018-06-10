@@ -8,7 +8,9 @@ import java.io.IOException;
 public class Installer extends JFrame {
 
     private static final int width = 600;
-    private static final int height = 260;
+    private static final int height = 300;
+    Font font;
+
 
     Installer() {
         super.frameInit();
@@ -27,7 +29,6 @@ public class Installer extends JFrame {
 
     private void initComponents() {
 
-        Font font;
         try {
             font = Font.createFont(Font.TRUETYPE_FONT, MainInstaller.class.getResourceAsStream("assets/randomclient/font/Roboto-Regular.ttf")).deriveFont(15);
         } catch (FontFormatException e) {

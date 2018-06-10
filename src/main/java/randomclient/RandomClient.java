@@ -19,5 +19,7 @@ public class RandomClient {
     @Subscribe
     public void init(InitializationEvent e) {
         LOGGER.info("Initialization");
+
+        
     }
 }
