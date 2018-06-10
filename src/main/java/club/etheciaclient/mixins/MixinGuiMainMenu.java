@@ -1,5 +1,6 @@
 package club.etheciaclient.mixins;
 
+import club.etheciaclient.gui.MainMenuGui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,7 +13,7 @@ public class MixinGuiMainMenu {
      */
     @Overwrite
     public void initGui() {
-        Minecraft.getMinecraft().displayGuiScreen(new club.etheciaclient.gui.GuiMainMenu());
+        Minecraft.getMinecraft().displayGuiScreen(new MainMenuGui());
     }
     /**
      * @author
