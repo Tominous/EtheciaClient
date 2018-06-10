@@ -7,6 +7,7 @@ import net.minecraft.client.Minecraft;
 import randomclient.event.LeaveServerEvent;
 import randomclient.event.join.JoinServerEvent;
 import randomclient.event.join.JoinSingleplayerEvent;
+import randomclient.utils.StringUtils;
 
 import java.time.OffsetDateTime;
 
@@ -16,8 +17,8 @@ public class DiscordRPCUpdater {
         this.client = client;
         // TODO: toggle
         RichPresence.Builder builder = new RichPresence.Builder();
-        client.sendRichPresence(builder.setState("IGN: " + Minecraft.getMinecraft().getSession().getUsername())
-        .setDetails("On the main menu")
+        client.sendRichPresence(builder.setState(StringUtils.replaceVowels("IGN: " + Minecraft.getMinecraft().getSession().getUsername()))
+        .setDetails(StringUtils.replaceVowels("On the main menu"))
         .setStartTimestamp(OffsetDateTime.now())
                 .setLargeImage("main1")
                 .setSmallImage("small1")
@@ -26,7 +27,7 @@ public class DiscordRPCUpdater {
     @Subscribe
     public void onSinglePlayer(JoinSingleplayerEvent e) {
         RichPresence.Builder builder = new RichPresence.Builder();
-        client.sendRichPresence(builder.setSmallImage("small1").setLargeImage("main1").setState("IGN: " + Minecraft.getMinecraft().getSession().getUsername()).setDetails("Playing Singleplayer").setStartTimestamp(OffsetDateTime.now()).build());
+        client.sendRichPresence(builder.setSmallImage("small1").setLargeImage("main1").setState(StringUtils.replaceVowels("IGN: " + Minecraft.getMinecraft().getSession().getUsername())).setDetails(StringUtils.replaceVowels("Playing Singleplayer")).setStartTimestamp(OffsetDateTime.now()).build());
     }
     @Subscribe
     public void onServerJoin(JoinServerEvent e) {
@@ -36,8 +37,8 @@ public class DiscordRPCUpdater {
     @Subscribe
     public void onServerLeave(LeaveServerEvent e) {
         RichPresence.Builder builder = new RichPresence.Builder();
-        client.sendRichPresence(builder.setState("IGN: " + Minecraft.getMinecraft().getSession().getUsername())
-                .setDetails("On the main menu")
+        client.sendRichPresence(builder.setState(StringUtils.replaceVowels("IGN: " + Minecraft.getMinecraft().getSession().getUsername()))
+                .setDetails(StringUtils.replaceVowels("On the main menu"))
                 .setStartTimestamp(OffsetDateTime.now())
                 .setLargeImage("main1")
                 .setSmallImage("small1")

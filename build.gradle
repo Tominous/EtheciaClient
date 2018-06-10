@@ -42,6 +42,7 @@ apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
 
 minecraft {
     version = "1.8.9"
