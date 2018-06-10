@@ -1,6 +1,7 @@
 package club.etheciaclient.launch;
 
 import club.etheciaclient.EtheciaClient;
+import club.etheciaclient.utils.EtheciaUtils;
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.LaunchClassLoader;
 import org.spongepowered.asm.launch.MixinBootstrap;
@@ -14,6 +15,7 @@ import java.util.Map;
 
 public class ClientTweaker implements ITweaker {
     private static final List<String> LAUNCH_ARGS = new ArrayList<>();
+    private static final EtheciaUtils utils = new EtheciaUtils();
 
     @Override
     public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {

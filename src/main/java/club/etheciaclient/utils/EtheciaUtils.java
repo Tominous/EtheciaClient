@@ -3,9 +3,7 @@ package club.etheciaclient.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class EthicaUtils {
-
-    public final Logger LOGGER = LogManager.getLogger("Ethecia Client");
+public class EtheciaUtils {
 
     public int getBuild() {
         return 1;
