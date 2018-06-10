@@ -5,6 +5,7 @@ import com.google.common.eventbus.Subscribe;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import randomclient.event.InitializationEvent;
+import randomclient.integrations.DiscordRPCManager;
 
 public class RandomClient {
     public static final EventBus EVENT_BUS = new EventBus();
@@ -20,6 +21,7 @@ public class RandomClient {
     public void init(InitializationEvent e) {
         LOGGER.info("Initialization");
 
-        
+        //Register Integrations
+        DiscordRPCManager.initDiscordRPC("455341865496084480");
     }
 }

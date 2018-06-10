@@ -55,7 +55,7 @@ public class DiscordRPCManager {
             for (int i = 0; i < 10000; ++i) {
                 DiscordRichPresence discordRichPresence = new DiscordRichPresence();
                 discordRichPresence.setState("IGN: " + Minecraft.getMinecraft().thePlayer.getName());
-                discordRichPresence.setDetails("Playing on: " + Minecraft.getMinecraft().getCurrentServerData().serverIP);
+                discordRichPresence.setDetails("Playing on: ");
                 discordRichPresence.setStartTimestamp(start);
                 discordRichPresence.setEndTimestamp(end);
                 discordRichPresence.setLargeImageKey("icon-large");
