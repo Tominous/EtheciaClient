@@ -12,7 +12,7 @@ public class MixinGuiMainMenu {
      */
     @Overwrite
     public void initGui() {
-        Minecraft.getMinecraft().displayGuiScreen(new ethecia.gui.GuiMainMenu());
+        Minecraft.getMinecraft().displayGuiScreen(new club.etheciaclient.gui.GuiMainMenu());
     }
     /**
      * @author

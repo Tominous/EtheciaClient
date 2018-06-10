@@ -1,4 +1,4 @@
-group 'randomclient'
+group 'club.etheciaclient'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -47,7 +47,7 @@ compileJava.options.encoding = 'UTF-8'
 minecraft {
     version = "1.8.9"
     mappings = "stable_20"
-    tweakClass = "randomclient.launch.ClientTweaker"
+    tweakClass = "club.etheciaclient.launch.ClientTweaker"
     runDir = 'run'
     clientJvmArgs = ["-XX:-DisableExplicitGC"]
     makeObfSourceJar = false
@@ -79,7 +79,6 @@ dependencies {
 mixin {
     // Specify "notch" or "searge" here
     defaultObfuscationEnv notch
-    add sourceSets.main, "mixin.hyperium.refmap.json"
 }
 
 compileKotlin {
@@ -110,11 +109,11 @@ jar {
 
 jar {
     manifest.attributes(
-            "MixinConfigs": 'mixins.randomclient.json',
-            "TweakClass": 'randomclient.launch.ClientTweaker',
+            "MixinConfigs": 'mixins.etheciaclient.json',
+            "TweakClass": 'club.etheciaclient.launch.ClientTweaker',
             "TweakOrder": 0,
             "Manifest-Version": 1.0,
-            'Main-Class': 'randomclient.installer.Installer'
+            'Main-Class': 'club.etheciaclient.installer.Installer'
     )
     configurations.embed.each { dep ->
         from(project.zipTree(dep)) {

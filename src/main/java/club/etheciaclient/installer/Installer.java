@@ -21,7 +21,7 @@ public class Installer extends JFrame {
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        setTitle("RandomClient Installer");
+        setTitle("EtheciaClient Installer");
 
         setResizable(false);
         setVisible(true);

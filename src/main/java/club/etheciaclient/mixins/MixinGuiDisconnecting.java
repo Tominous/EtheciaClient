@@ -1,6 +1,6 @@
 package club.etheciaclient.mixins;
 
-import club.etheciaclient.RandomClient;
+import club.etheciaclient.EtheciaClient;
 import club.etheciaclient.event.LeaveServerEvent;
 import net.minecraft.client.gui.GuiDisconnected;
 import net.minecraft.client.gui.GuiScreen;
@@ -17,6 +17,6 @@ public class MixinGuiDisconnecting {
                       String reasonLocalizationKey,
                       IChatComponent chatComp,
                       CallbackInfo ci) {
-        RandomClient.EVENT_BUS.post(new LeaveServerEvent());
+        EtheciaClient.EVENT_BUS.post(new LeaveServerEvent());
     }
 }
