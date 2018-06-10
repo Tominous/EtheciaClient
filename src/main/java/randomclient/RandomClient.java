@@ -4,7 +4,7 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import randomclient.event.PreInitializationEvent;
+import randomclient.event.InitializationEvent;
 
 public class RandomClient {
     public static final EventBus EVENT_BUS = new EventBus();
@@ -17,7 +17,7 @@ public class RandomClient {
     }
 
     @Subscribe
-    public void preinit(PreInitializationEvent e) {
-        LOGGER.info("PreInit");
+    public void init(InitializationEvent e) {
+        LOGGER.info("Initialization");
     }
 }

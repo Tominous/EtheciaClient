@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "randomclient.mixins",
+  "verbose": true,
+  "mixins": [
+    "MixinMinecraft"
+  ]
+}
