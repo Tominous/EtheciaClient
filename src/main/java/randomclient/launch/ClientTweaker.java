@@ -27,7 +27,7 @@ public class ClientTweaker implements ITweaker {
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
         new RandomClient();
-        System.out.println("Initializing RandomClient");
+        RandomClient.LOGGER.info("Running tweaker");
         RandomClient.EVENT_BUS.post(new PreInitializationEvent());
     }
 
