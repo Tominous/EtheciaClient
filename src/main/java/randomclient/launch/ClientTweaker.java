@@ -2,8 +2,9 @@ package randomclient.launch;
 
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.LaunchClassLoader;
+import org.spongepowered.asm.launch.MixinBootstrap;
+import org.spongepowered.asm.mixin.Mixins;
 import randomclient.RandomClient;
-import randomclient.event.PreInitializationEvent;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -26,9 +27,10 @@ public class ClientTweaker implements ITweaker {
 
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
-        new RandomClient();
-        RandomClient.LOGGER.info("Running tweaker");
-        RandomClient.EVENT_BUS.post(new PreInitializationEvent());
+        RandomClient.LOGGER.info("Initializing bootstraps");
+        MixinBootstrap.init();
+        RandomClient.LOGGER.info("Adding mixin configuration");
+        Mixins.addConfiguration("mixins.randomclient.json");
     }
 
     @Override
