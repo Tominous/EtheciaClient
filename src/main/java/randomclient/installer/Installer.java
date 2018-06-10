@@ -30,7 +30,7 @@ public class Installer extends JFrame {
     private void initComponents() {
 
         try {
-            font = Font.createFont(Font.TRUETYPE_FONT, MainInstaller.class.getResourceAsStream("assets/randomclient/font/Roboto-Regular.ttf")).deriveFont(15);
+            font = Font.createFont(Font.TRUETYPE_FONT, MainInstaller.class.getResourceAsStream("assets/randomclient/font/Roboto-Regular.ttf")).deriveFont(Font.PLAIN);
         } catch (FontFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {

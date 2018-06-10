@@ -4,6 +4,8 @@
   "package": "randomclient.mixins",
   "verbose": true,
   "mixins": [
-    "MixinMinecraft"
+    "MixinMinecraft",
+    "MixinGuiConnecting",
+    "MixinGuiDisconnecting"
   ]
 }

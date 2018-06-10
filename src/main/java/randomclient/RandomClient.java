@@ -12,16 +12,9 @@ public class RandomClient {
     public static final Logger LOGGER = LogManager.getLogger("Random Client");
     public static RandomClient INSTANCE;
 
-    public RandomClient() {
-        INSTANCE = this;
-        EVENT_BUS.register(this);
-    }
-
     @Subscribe
     public void init(InitializationEvent e) {
-        LOGGER.info("Initialization");
-
-        //Register Integrations
-        DiscordRPCManager.initDiscordRPC("455341865496084480");
+        LOGGER.info("Intializing integrations");
+        DiscordRPCManager.initDiscordRPC(455364782761967616L);
     }
 }
