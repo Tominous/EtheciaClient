@@ -1,4 +1,4 @@
-group 'me.conorthedev.randomclient'
+group 'randomclient'
 version '1.0-SNAPSHOT'
 
 buildscript {
