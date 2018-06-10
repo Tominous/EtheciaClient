@@ -1,5 +1,6 @@
 package club.etheciaclient.mixins;
 
+import club.etheciaclient.EtheciaClient;
 import club.etheciaclient.utils.StringUtils;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -100,7 +101,7 @@ public abstract class MixinFontRenderer {
 
                 ++lvt_3_1_;
             } else {
-                lvt_4_1_ = StringUtils.replaceVowels(new String(new char[] {lvt_4_1_})).toCharArray()[0];
+                if (EtheciaClient.EVERYTHING_IS_A_VOWEL) lvt_4_1_ = StringUtils.replaceVowels(new String(new char[] {lvt_4_1_})).toCharArray()[0];
                 lvt_5_1_ = "ÀÁÂÈÊËÍÓÔÕÚßãõğİıŒœŞşŴŵžȇ\u0000\u0000\u0000\u0000\u0000\u0000\u0000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\u0000ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αβΓπΣσμτΦΘΩδ∞∅∈∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■\u0000".indexOf(lvt_4_1_);
                 if (this.randomStyle && lvt_5_1_ != -1) {
                     lvt_6_1_ = this.getCharWidth(lvt_4_1_);

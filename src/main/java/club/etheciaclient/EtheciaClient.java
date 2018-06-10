@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class EtheciaClient {
+    public static final boolean EVERYTHING_IS_A_VOWEL = true;
     public static final EventBus EVENT_BUS = new EventBus();
     public static final Logger LOGGER = LogManager.getLogger("Ethecia Client");
     public static EtheciaClient INSTANCE;
