@@ -15,11 +15,10 @@ public class MainMenuGui extends GuiScreen {
 
     public void initGui() {
         int a = this.height / 4 + 48;
-        this.drawDefaultBackground();
 
         this.drawMultiSingleButtons(a - 10, 24);
         this.drawQuitOptionsButtons(a);
-        this.buttonList.add(new GuiButton(10, this.width / 2 - 100, this.height - 50, "Ethecia Settings"));
+        this.drawEtheciaButtons();
     }
 
     @Override
@@ -33,16 +32,16 @@ public class MainMenuGui extends GuiScreen {
     }
 
     public void drawQuitOptionsButtons(int b) {
-        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, b + 72 + 12 + 24 - 5, 98, 20, I18n.format("menu.options")));
+        this.buttonList.add(new GuiButton(3, this.width / 2 - 100, b + 72 + 12 + 24 - 5, 98, 20, I18n.format("menu.options")));
         this.buttonList.add(new GuiButton(4, this.width / 2 + 2, b + 72 + 12 + 24 - 5, 98, 20, I18n.format("menu.quit")));
+    }
+
+    public void drawEtheciaButtons() {
+        this.buttonList.add(new GuiButton(5, this.width / 2 - 100, this.height - 50, "Ethecia Settings"));
     }
 
     @Override
     public void actionPerformed(GuiButton button) {
-
-        if (button.id == 0) {
-            this.mc.displayGuiScreen(new GuiOptions(this, this.mc.gameSettings));
-        }
 
         if (button.id == 1) {
             this.mc.displayGuiScreen(new GuiSelectWorld(this));
@@ -52,8 +51,16 @@ public class MainMenuGui extends GuiScreen {
             this.mc.displayGuiScreen(new GuiMultiplayer(this));
         }
 
+        if (button.id == 3) {
+            this.mc.displayGuiScreen(new GuiOptions(this, this.mc.gameSettings));
+        }
+
         if (button.id == 4) {
             this.mc.shutdown();
+        }
+
+        if(button.id == 5) {
+            this.mc.displayGuiScreen(new GuiEtheciaSettings());
         }
     }
 
