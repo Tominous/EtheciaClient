@@ -8,6 +8,7 @@
     "MixinGuiConnecting",
     "MixinGuiDisconnecting",
     "MixinFontRenderer",
-    "MixinGuiMainMenu"
+    "MixinGuiMainMenu",
+    "MixinEntityRenderer"
   ]
 }

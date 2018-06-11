@@ -1,6 +1,7 @@
 package club.etheciaclient.launch;
 
 import club.etheciaclient.EtheciaClient;
+import club.etheciaclient.mods.AbstractMod;
 import club.etheciaclient.utils.EtheciaUtils;
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.LaunchClassLoader;
@@ -33,6 +34,12 @@ public class ClientTweaker implements ITweaker {
         MixinBootstrap.init();
         EtheciaClient.LOGGER.info("Adding mixin configuration");
         Mixins.addConfiguration("mixins.etheciaclient.json");
+        EtheciaClient.LOGGER.info("Enabling mods");
+        try {
+            AbstractMod.initTransformers();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
     }
 
     @Override

@@ -2,6 +2,7 @@ package club.etheciaclient;
 
 import club.etheciaclient.event.InitializationEvent;
 import club.etheciaclient.integrations.DiscordRPCManager;
+import club.etheciaclient.mods.AbstractMod;
 import club.etheciaclient.utils.EtheciaUtils;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
@@ -19,8 +20,10 @@ public class EtheciaClient {
 
 
     @Subscribe
-    public void init(InitializationEvent e) {
+    public void init(InitializationEvent e) throws Throwable {
         LOGGER.info("Starting integrations");
         DiscordRPCManager.initDiscordRPC(455364782761967616L);
+        LOGGER.info("Initializing mods (the sequel)");
+        AbstractMod.mcInit();
     }
 }
