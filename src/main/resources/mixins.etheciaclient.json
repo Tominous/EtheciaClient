@@ -9,6 +9,7 @@
     "MixinGuiDisconnecting",
     "MixinFontRenderer",
     "MixinGuiMainMenu",
-    "MixinEntityRenderer"
+    "MixinEntityRenderer",
+    "MixinPauseGui"
   ]
 }
