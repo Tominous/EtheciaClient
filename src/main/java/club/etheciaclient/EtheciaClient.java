@@ -24,7 +24,7 @@ public class EtheciaClient {
     public void init(InitializationEvent e) throws Throwable {
         LOGGER.info("Starting integrations");
         DiscordRPCManager.initDiscordRPC(455364782761967616L);
-        Display.setTittle("EtheciaClient " + EtheciaUtils.getVersion());
+        Display.setTitle("EtheciaClient " + utils.getVersion());
         LOGGER.info("Initializing mods (the sequel)");
         AbstractMod.mcInit();
     }
