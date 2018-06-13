@@ -35,10 +35,10 @@ public class MainMenuGui extends GuiScreen {
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        super.drawScreen(mouseX, mouseY, partialTicks);
         GlStateManager.disableAlpha();
         this.renderBackground();
 
+        super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
     private void drawMinecraftButtons(int y_1, int y_2, int b) {
@@ -51,7 +51,7 @@ public class MainMenuGui extends GuiScreen {
 
     private void drawEtheciaButtons() {
         this.buttonList.add(new GuiButton(5, this.width / 2 - 100, this.height - 50, "Ethecia Settings"));
-        this.buttonList.add(new GuiButton(6, this.width / 2 - 100, this.height - 10, "Ethecia Website"));
+        this.buttonList.add(new GuiButton(6, this.width / 2 - 100, this.height - 25, "Ethecia Website"));
     }
 
     @Override
