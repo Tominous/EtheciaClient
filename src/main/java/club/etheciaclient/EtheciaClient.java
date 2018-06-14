@@ -23,12 +23,14 @@ public class EtheciaClient {
 
     @Subscribe
     public void init(InitializationEvent e) throws Throwable {
+        LOGGER.info("Starting Addons");
         AddonDiscoverer.mcInit();
+
         LOGGER.info("Starting integrations");
         DiscordRPCManager.initDiscordRPC(455364782761967616L);
         Display.setTitle("EtheciaClient " + utils.getVersion());
 
-        LOGGER.info("Starting Mods");
+        LOGGER.info("Starting Integrated Mods");
         AbstractMod.mcInit();
     }
 }
