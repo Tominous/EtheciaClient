@@ -1,5 +1,6 @@
 package club.etheciaclient;
 
+import club.etheciaclient.addons.discover.AddonDiscoverer;
 import club.etheciaclient.event.InitializationEvent;
 import club.etheciaclient.integrations.DiscordRPCManager;
 import club.etheciaclient.mods.AbstractMod;
@@ -22,6 +23,7 @@ public class EtheciaClient {
 
     @Subscribe
     public void init(InitializationEvent e) throws Throwable {
+        AddonDiscoverer.mcInit();
         LOGGER.info("Starting integrations");
         DiscordRPCManager.initDiscordRPC(455364782761967616L);
         Display.setTitle("EtheciaClient " + utils.getVersion());
