@@ -17,9 +17,9 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class AddonDiscoverer {
-    public static final File ADDON_DIR = new File(ClientTweaker.GAME_DIR, "ethecia/addons");
-    public static AddonDiscoverer INSTANCE;
-    public List<Manifest> addons = new ArrayList<>();
+    private static final File ADDON_DIR = new File(ClientTweaker.GAME_DIR, "ethecia/addons");
+    private static AddonDiscoverer INSTANCE;
+    private List<Manifest> addons = new ArrayList<>();
     public static void init() throws IOException {
         new AddonDiscoverer().discoverAddons();
     }
