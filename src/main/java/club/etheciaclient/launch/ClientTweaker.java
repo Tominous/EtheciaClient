@@ -1,6 +1,7 @@
 package club.etheciaclient.launch;
 
 import club.etheciaclient.EtheciaClient;
+import club.etheciaclient.addons.discover.AddonDiscoverer;
 import club.etheciaclient.mods.AbstractMod;
 import club.etheciaclient.utils.EtheciaUtils;
 import net.minecraft.launchwrapper.ITweaker;
@@ -9,6 +10,7 @@ import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.Mixins;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +20,8 @@ public class ClientTweaker implements ITweaker {
     private static final List<String> LAUNCH_ARGS = new ArrayList<>();
     private static final EtheciaUtils utils = new EtheciaUtils();
 
+    public static File GAME_DIR;
+
     @Override
     public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
         LAUNCH_ARGS.addAll(args);
@@ -25,11 +29,14 @@ public class ClientTweaker implements ITweaker {
         extra.put("gameDir", gameDir);
         extra.put("assetsDir", assetsDir);
         extra.put("version", profile);
+        GAME_DIR = gameDir;
         addArgs(extra);
     }
 
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
+        classLoader.addClassLoaderExclusion("club.etheciaclient.addons.discover.");
+        //classLoader.addClassLoaderExclusion("club.etheciaclient.");
         EtheciaClient.LOGGER.info("Initializing bootstraps");
         MixinBootstrap.init();
         EtheciaClient.LOGGER.info("Adding mixin configuration");
@@ -39,6 +46,12 @@ public class ClientTweaker implements ITweaker {
             AbstractMod.initTransformers();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
+        }
+        EtheciaClient.LOGGER.info("Discovering addons");
+        try {
+            AddonDiscoverer.init();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
