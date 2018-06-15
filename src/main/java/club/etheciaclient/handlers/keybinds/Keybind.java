@@ -1,4 +1,4 @@
-package club.etheciaclient.handlers.Keybinds;
+package club.etheciaclient.handlers.keybinds;
 
 import net.minecraft.client.settings.KeyBinding;
 
