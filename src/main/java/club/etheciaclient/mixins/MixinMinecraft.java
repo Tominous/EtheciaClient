@@ -1,6 +1,7 @@
 package club.etheciaclient.mixins;
 
 import club.etheciaclient.EtheciaClient;
+import club.etheciaclient.event.CloseEvent;
 import club.etheciaclient.event.InitializationEvent;
 import club.etheciaclient.event.PreInitializationEvent;
 import club.etheciaclient.event.TickEvent;
@@ -36,5 +37,9 @@ public class MixinMinecraft {
     )
     private void tick(CallbackInfo ci) {
         EtheciaClient.EVENT_BUS.post(new TickEvent());
+    }
+    @Inject(method = "shutdown", at = @At("HEAD"))
+    private void shutdown(CallbackInfo ci) {
+        EtheciaClient.EVENT_BUS.post(new CloseEvent());
     }
 }

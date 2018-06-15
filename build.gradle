@@ -65,6 +65,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.21'
     embed('org.spongepowered:mixin:0.7.7-SNAPSHOT') {
         exclude module: 'launchwrapper'
         exclude module: 'guava'

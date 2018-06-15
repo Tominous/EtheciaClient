@@ -24,7 +24,8 @@ public class AddonDiscoverer {
         new AddonDiscoverer().discoverAddons();
     }
     public static void mcInit() {
-        for (Manifest m : INSTANCE.addons) {
+        for (int i = INSTANCE.addons.size(); i > 0; i--) {
+            Manifest m = INSTANCE.addons.get(i);
             EtheciaClient.LOGGER.info("Checking addon main class " + m.mainClass);
             try {
                 Class.forName(m.mainClass);

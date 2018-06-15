@@ -23,21 +23,21 @@ public class DiscordRPCUpdater {
             setRichPrecense(builder.setState(StringUtils.replaceVowels("IGN: " + Minecraft.getMinecraft().getSession().getUsername()))
                     .setDetails(StringUtils.replaceVowels("On the main menu"))
                     .setStartTimestamp(OffsetDateTime.now())
-                    .setLargeImage("main1")
-                    .setSmallImage("small1")
+                    .setLargeImage("ethecia_large")
+                    .setSmallImage("ethecia_small")
                     .build());
     }
 
     @Subscribe
     public void onSinglePlayer(JoinSingleplayerEvent e) {
             RichPresence.Builder builder = new RichPresence.Builder();
-            setRichPrecense(builder.setSmallImage("small1").setLargeImage("main1").setState(StringUtils.replaceVowels("IGN: " + Minecraft.getMinecraft().getSession().getUsername())).setDetails(StringUtils.replaceVowels("Playing Singleplayer")).setStartTimestamp(OffsetDateTime.now()).build());
+            setRichPrecense(builder.setSmallImage("ethecia_small").setLargeImage("ethecia_large").setState(StringUtils.replaceVowels("IGN: " + Minecraft.getMinecraft().getSession().getUsername())).setDetails(StringUtils.replaceVowels("Playing Singleplayer")).setStartTimestamp(OffsetDateTime.now()).build());
     }
 
     @Subscribe
     public void onServerJoin(JoinServerEvent e) {
             RichPresence.Builder builder = new RichPresence.Builder();
-            setRichPrecense(builder.setSmallImage("small1").setLargeImage("main1").setState("IGN: " + Minecraft.getMinecraft().getSession().getUsername()).setDetails("Playing on " + e.ip).setStartTimestamp(OffsetDateTime.now()).build());
+            setRichPrecense(builder.setSmallImage("ethecia_small").setLargeImage("ethecia_large").setState("IGN: " + Minecraft.getMinecraft().getSession().getUsername()).setDetails("Playing on " + e.ip).setStartTimestamp(OffsetDateTime.now()).build());
     }
 
     @Subscribe
@@ -46,17 +46,23 @@ public class DiscordRPCUpdater {
             setRichPrecense(builder.setState(StringUtils.replaceVowels("IGN: " + Minecraft.getMinecraft().getSession().getUsername()))
                     .setDetails(StringUtils.replaceVowels("On the main menu"))
                     .setStartTimestamp(OffsetDateTime.now())
-                    .setLargeImage("main1")
-                    .setSmallImage("small1")
+                    .setLargeImage("ethecia_large")
+                    .setSmallImage("ethecia_small")
                     .build());
     }
 
     public void setRichPrecense(RichPresence rpc) {
-        if (etheciaClient.RPC) {
-            client.sendRichPresence(rpc);
-            System.out.println(rpc.toJson().toString());
-            current = rpc;
+        if (!EtheciaClient.RICH_PRESENCE) {
+            EtheciaClient.LOGGER.info("Cancelling rich precense sending");
+            return;
         }
+        client.sendRichPresence(rpc);
+        System.out.println(rpc.toJson().toString());
+        current = rpc;
+    }
+
+    public void removeRichPresence() {
+
     }
 
     public RichPresence getRichPrecense() {
