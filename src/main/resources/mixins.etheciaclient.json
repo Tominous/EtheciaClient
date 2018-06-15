@@ -10,6 +10,7 @@
     "MixinFontRenderer",
     "MixinGuiMainMenu",
     "MixinEntityRenderer",
-    "MixinPauseGui"
+    "MixinPauseGui",
+    "MixinKeybind"
   ]
 }
