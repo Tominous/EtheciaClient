@@ -26,7 +26,6 @@ public class GuiEtheciaSettings extends GuiScreen {
 
     @Override
     public void actionPerformed(GuiButton button) {
-        Launch
         if(button.id == 0) {
             EtheciaClient.RICH_PRESENCE = !EtheciaClient.RICH_PRESENCE;
         }
