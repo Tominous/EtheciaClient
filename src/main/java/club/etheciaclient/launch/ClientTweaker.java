@@ -36,7 +36,7 @@ public class ClientTweaker implements ITweaker {
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
         classLoader.addClassLoaderExclusion("club.etheciaclient.addons.discover.");
-        //classLoader.addClassLoaderExclusion("club.etheciaclient.");
+        classLoader.addClassLoaderExclusion("club.etheciaclient.");
         EtheciaClient.LOGGER.info("Initializing bootstraps");
         MixinBootstrap.init();
         EtheciaClient.LOGGER.info("Adding mixin configuration");
